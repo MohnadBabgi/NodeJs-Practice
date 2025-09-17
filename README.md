@@ -1,1 +1,1 @@
-This a repo for practicing NodeJs concepts
+This is a repo for practicing NodeJs concepts
