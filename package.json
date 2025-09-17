@@ -1,0 +1,12 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "This is for my practice for NodeJs",
+  "license": "ISC",
+  "author": "Mohanad Babgi",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
