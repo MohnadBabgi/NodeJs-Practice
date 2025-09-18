@@ -5,11 +5,15 @@ import { FilterData } from './utils/GetDataByParam.js'
 
 const PORT = 8000
 
-const server = http.createServer(async (req, res) => {
+  const server = http.createServer(async (req, res) => {
   const destinations = await getDataFromDB()
+  const urlObj =   new URL (req.url,'http://${req.headers.host}')   
+  const queryObj = Object.fromEntries(urlObj.searchParams) 
 
-  if (req.url === '/api' && req.method === 'GET') {
+
+  if (urlObj.pathname === '/api' && req.method === 'GET') {
     SendJSONres(res, 200, destinations)
+      console.log(queryObj)
 
   } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
     const continent = req.url.split('/').pop()
